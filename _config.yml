@@ -1,0 +1,12 @@
+# Site settings
+title: Stringpuncher
+email: lee.hanel@gmail.com
+description: "Puppet and Fly Fishing"
+baseurl: ""
+url: "http://stringpuncher.com"
+twitter_username: stringpuncher
+github_username:  lee.hanel
+
+# Build settings
+markdown: kramdown
+permalink: pretty

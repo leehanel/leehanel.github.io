@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stringpuncher</title>
+    <description>Puppet and Fly Fishing</description>
+    <link>http://stringpuncher.com/</link>
+    <atom:link href="http://stringpuncher.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 28 Jul 2014 21:22:01 -0500</pubDate>
+    <lastBuildDate>Mon, 28 Jul 2014 21:22:01 -0500</lastBuildDate>
+    <generator>Jekyll v2.1.1</generator>
+    
+      <item>
+        <title>Automated Jekyll deployment with drafts</title>
+        <description>&lt;p&gt;I’m looking at using &lt;a href=&quot;http://agiletortoise.com/drafts/&quot;&gt;Drafts&lt;/a&gt;, &lt;a href=&quot;www.dropbox.com&quot;&gt;Dropbox&lt;/a&gt; and &lt;a href=&quot;http://inotify.aiken.cz/?section=incron&amp;amp;page=faq&amp;amp;lang=en&quot;&gt;incron&lt;/a&gt; to automate jekyll blog deployments.&lt;/p&gt;
+
+&lt;p&gt;I was given the idea by &lt;a href=&quot;http://www.evanlovely.com/notes/about-this-jekyll-site/&quot;&gt;This&lt;/a&gt;blog post, although I don’t have a Mac, so I’ll be replacing Hazel with incron.&lt;/p&gt;
+
+&lt;p&gt;Lee&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Jan 2014 04:25:07 -0600</pubDate>
+        <link>http://stringpuncher.com/2014/01/03/Automated_Jekyll_deployment_with_drafts/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2014/01/03/Automated_Jekyll_deployment_with_drafts/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Bluetooth_case</title>
+        <description>&lt;p&gt;Got &lt;a href=&quot;http://www.amazon.com/Logitech-Keyboard-Built-In-Stand-920-003402/dp/B0054JE706/ref=sr_1_11?ie=UTF8&amp;amp;qid=1388440093&amp;amp;sr=8-11&amp;amp;keywords=logitec+bluetooth+keyboard&quot;&gt;this&lt;/a&gt; keyboard and am now testing for use with my ipad.  This could totally change my usage of the ipad.&lt;/p&gt;
+
+&lt;p&gt;Seems to work awsome with panic’s prompt, but need to figure out how to remap some keys so I can have the escape key on the keyboard for vi.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Jan 2014 00:00:00 -0600</pubDate>
+        <link>http://stringpuncher.com/2014/01/01/Bluetooth_case/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2014/01/01/Bluetooth_case/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>There are two dangers in not owning a farm</title>
+        <description>&lt;p&gt;There are two dangers in not owning a farm: the belief that heat comes from the furnace and food comes from the supermarket.
+— Aldo Leopold&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Jun 2013 05:25:07 -0500</pubDate>
+        <link>http://stringpuncher.com/2013/06/11/there-are-two-dangers-in-not-owning-a-farm-the/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2013/06/11/there-are-two-dangers-in-not-owning-a-farm-the/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Puppet Ordering</title>
+        <description>&lt;p&gt;We’ve been doing ordering by wrapping puppet’s package resource with defined types like follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-puppet&quot; data-lang=&quot;puppet&quot;&gt;&lt;span class=&quot;k&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;puppet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;rpm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ensure&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;latest&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;yumrepo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;client&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$name:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;ensure&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ensure,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;YumRepo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;repo_name&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;to ensure that we have the providing yum repo on the server.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-puppet&quot; data-lang=&quot;puppet&quot;&gt;&lt;span class=&quot;na&quot;&gt;puppet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;rpm&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&amp;quot;httpd&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ensure&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;latest&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;this leaves us with tons of calls to a custom type, which could all could be represented by a single line:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-puppet&quot; data-lang=&quot;puppet&quot;&gt;&lt;span class=&quot;k&quot;&gt;Yumrepo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;|&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Package&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;|&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ym&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and then we could revert to using the regular package resources so as to not require a defined type.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-puppet&quot; data-lang=&quot;puppet&quot;&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&amp;#39;httpd&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ensure&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;latest&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 10 Jun 2013 17:59:00 -0500</pubDate>
+        <link>http://stringpuncher.com/2013/06/10/puppet-ordering/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2013/06/10/puppet-ordering/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>France Removes Internet Cut-Off Threat From its Anti-Piracy Law</title>
+        <description>
+</description>
+        <pubDate>Wed, 05 Jun 2013 15:33:11 -0500</pubDate>
+        <link>http://stringpuncher.com/2013/06/05/france-removes-internet-cut-off/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2013/06/05/france-removes-internet-cut-off/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Jekyll Documentation</title>
+        <description>
+</description>
+        <pubDate>Wed, 05 Jun 2013 15:03:11 -0500</pubDate>
+        <link>http://stringpuncher.com/2013/06/05/jekyll-documentation/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2013/06/05/jekyll-documentation/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
+To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 05 Jun 2013 12:06:25 -0500</pubDate>
+        <link>http://stringpuncher.com/jekyll/update/2013/06/05/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/jekyll/update/2013/06/05/welcome-to-jekyll/</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>On Jerry Jones and The Cowboys</title>
+        <description>&lt;p&gt;&lt;span&gt;Could it be he’s from Arkansas and has a secret wish to make millions while making all us Texans miserable?&lt;/span&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 19 Dec 2012 07:44:01 -0600</pubDate>
+        <link>http://stringpuncher.com/2012/12/19/on-jerry-jones-and-the-cowboys/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2012/12/19/on-jerry-jones-and-the-cowboys/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Tests Show Most Store Honey Isn&#39;t Honey</title>
+        <description></description>
+        <pubDate>Wed, 09 Nov 2011 03:43:52 -0600</pubDate>
+        <link>http://stringpuncher.com/2011/11/09/tests-show-most-store-honey-isnt-honey/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2011/11/09/tests-show-most-store-honey-isnt-honey/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Duct tape is like the force.</title>
+        <description>&lt;blockquote&gt;Duct tape is like the force. It has a light side, a dark side, and it holds the universe together&amp;#8230;.&lt;/blockquote&gt;&amp;#8212;Carl Zwanzig
+</description>
+        <pubDate>Wed, 02 Nov 2011 14:46:21 -0500</pubDate>
+        <link>http://stringpuncher.com/2011/11/02/duct-tape-is-like-the-force-it-has-a-light-side/</link>
+        <guid isPermaLink="true">http://stringpuncher.com/2011/11/02/duct-tape-is-like-the-force-it-has-a-light-side/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
